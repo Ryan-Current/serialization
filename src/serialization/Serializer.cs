@@ -71,8 +71,3 @@ public class Serializer
         Console.WriteLine($"MessagePackSerializer deserialization took: {watch.ElapsedMilliseconds/1000.0} seconds");
     }
 }
-
-public class Model 
-{
-    public SerializableObject[] List;  
-}
