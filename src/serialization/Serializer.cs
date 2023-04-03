@@ -58,16 +58,21 @@ public class Serializer
     }
 
     
-    public void TestBinaryPack()
-    {
+    public void TestMessagePack()
+    { 
         var watch = Stopwatch.StartNew(); 
-        byte[] packed = BinaryConverter.Serialize(serializeList); 
+        byte[] packed = MessagePackSerializer.Serialize(serializeList); 
         watch.Stop(); 
-        Console.WriteLine($"BinaryPackSerializer serialization took: {watch.ElapsedMilliseconds/1000.0} seconds"); 
+        Console.WriteLine($"MessagePackSerializer serialization took: {watch.ElapsedMilliseconds/1000.0} seconds"); 
 
         watch = Stopwatch.StartNew();
-        List<SerializableObject> deserialized = BinaryConverter.Deserialize<List<SerializableObject>>(packed) ?? new(); 
+        List<SerializableObject> deserialized = MessagePackSerializer.Deserialize<List<SerializableObject>>(packed) ?? new(); 
         watch.Stop();
-        Console.WriteLine($"BinaryPackSerializer deserialization took: {watch.ElapsedMilliseconds/1000.0} seconds");
+        Console.WriteLine($"MessagePackSerializer deserialization took: {watch.ElapsedMilliseconds/1000.0} seconds");
     }
+}
+
+public class Model 
+{
+    public SerializableObject[] List;  
 }
