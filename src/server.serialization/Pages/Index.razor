@@ -1,9 +1,36 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<div style="display:flex; flex-flow:column nowrap;">
+    <button @onclick="testSystem">System.Text.Json</button>
+    <button @onclick="testNewtonsoft">Newtonsoft</button>
+    <button @onclick="testMemoryPack">MemoryPack</button>
+    <button @onclick="testMessagePack">MessagePack</button>
+</div>
 
-<h1>Hello, world!</h1>
+@code {
+    private Serializer serializer = new(); 
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    private void testSystem()
+    {
+        serializer.TestSystemTextJson(); 
+    }
+
+
+    private void testNewtonsoft()
+    {
+        serializer.TestNewtonsoft(); 
+    }
+
+
+    private void testMemoryPack()
+    {
+        serializer.TestMemoryPack(); 
+    }
+
+
+    private void testMessagePack()
+    {
+        serializer.TestMessagePack(); 
+    }
+}
