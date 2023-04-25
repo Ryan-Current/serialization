@@ -23,4 +23,6 @@ The present study aimed to investigate the effects of Package and Platform on Se
 
 ## Results
 
+![Graph of the mean serialization speeds by package and platform](./MeanSerializationSpeed.png)
 
+![Graph of the mean deserialization speeds by package and platform](./MeanDeserializationSpeed.png)
